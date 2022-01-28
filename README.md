@@ -1,4 +1,4 @@
-# Manga_Enhance
+# Manga Enhance
 The code for the Manga Enhance userscript for Tampermonkey
 
 
