@@ -9,7 +9,7 @@ This repository contains the code for the Manga Enhance userscript for Tampermon
 
 
 ## What sites are supported ?
-Currently, only https://manga-tx.com/ is supported. Other changes may include other sites.
+Currently, only https://manga-tx.com is supported. Other changes may include other sites.
 
 
 ## What are the fonctiunalities ?
