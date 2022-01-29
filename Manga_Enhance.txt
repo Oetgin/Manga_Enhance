@@ -5,6 +5,7 @@
 // @description  Improves manga sites' reading experience
 // @author       Oetgin
 // @match        https://manga-tx.com/*
+// @match        https://www.webtoons.com/*
 // @icon         https://github.com/Oetgin/Manga_Enhance/blob/main/Manga_enhance.png?raw=true.png
 // @grant        none
 // @run-at       document-end
@@ -17,6 +18,7 @@
     console.log("https://github.com/Oetgin/Manga_Enhance")
 
     // Manga-TX code
+    // When reading mangas
     try {
         // Remove banner
         const elements = document.getElementsByClassName("c-sub-header-nav with-border");
@@ -29,29 +31,46 @@
         for (let i=0; i<imgs.length; i++){
             imgs[i].children[0].style.margin = 0;
         }
-    document.getElementsByClassName("reading-content")[0].style.zoom = 0.7
+
+        // Dezoom
+        document.getElementsByClassName("reading-content")[0].style.zoom = 0.7
     } catch {}
 
-    // Click the "read first" button when mouse hovers over it
-    try {document.getElementById("btn-read-last").addEventListener("mouseover", ()=>{
+    // When on a manga chapter list page
+    try {
+        // Click the "read first" button when mouse hovers over it
+        document.getElementById("btn-read-last").addEventListener("mouseover", ()=>{
         document.getElementById("btn-read-last").click();
     })} catch {}
+
+    // Webtoons code
+    try{
+        // Dezoom
+        document.getElementById("_imageList").style.zoom = 0.7
+        document.getElementById("_imageList").style.width = "1602px"
+    } catch {}
 
 })();
 
 
-// Activate whan scrolling
 window.onscroll = function(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    // Activate whan scrolling
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
         // You're at the bottom of the page
 
-        // Click next page button
+        // Manga-TX
         try {
+            // Click next page button
             document.getElementsByClassName("btn next_page")[0].click();
         } catch {}
-        // Click load more button
         try {
+            // Click load more button
             document.getElementsByClassName("btn btn-default load-ajax")[0].click();
+        } catch {}
+
+        // Webtoons
+        try{
+            document.getElementsByClassName("pg_next _nextEpisode NPI=a:next,g:fr_fr")[0].click()
         } catch {}
     }
 };
