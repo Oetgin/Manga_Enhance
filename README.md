@@ -24,6 +24,7 @@ Currently, https://manga-tx.com and https://www.webtoons.com are supported. Othe
 
 ## How can I improve it ?
 You can improve this project by either writing new code or offering improvement ideas.
+You can also report issues (please include context and a screenshot if possible).
 
 
 ## Contact
