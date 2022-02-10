@@ -18,6 +18,7 @@ Currently, https://manga-tx.com and https://www.webtoons.com are supported. Othe
 - Automatically go to the next chapter when at the bottom of the page
 - Automatically load more mangas when browsing through the site and at the bottom of the page
 - Dezoom a bit to be able to read more at once
+- Small menu to change the zoom level
 ### Webtoons :
 - Automatically go to the next chapter when at the bottom of the page
 - Dezoom a bit to be able to read more at once
