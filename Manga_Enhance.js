@@ -13,14 +13,8 @@
 
 
 function dezoom(dezoomValue){
-        var previousZoom;
-        var readingContent = document.getElementsByClassName("reading-content")[0];
-        readingContent.style.zoom = 1;
-
-        while (previousZoom != readingContent.style.zoom){
-            previousZoom = readingContent.style.zoom;
-            readingContent.style.zoom = (previousZoom * (readingContent.offsetWidth / dezoomValue)); // Dezoom so that te offset width becomes the same for every manga, no matter the initial width
-        }
+        const readingContent = document.getElementsByClassName("reading-content")[0];
+        readingContent.style.zoom = dezoomValue;
 }
 
 
@@ -28,10 +22,10 @@ function dezoom(dezoomValue){
 function createMenu(){
 
     // Get previous used zoom
-    var defaultZoom = localStorage.getItem("zoom")
+    var defaultZoom = localStorage.getItem("zoom");
 
     // Dezoom to previous zoom value
-    dezoom((100-defaultZoom)*100)
+    dezoom(defaultZoom/100+0.1);
 
     // The div for the menu
     var menuDiv = document.createElement("div");
@@ -79,7 +73,7 @@ function createMenu(){
     // Update the current slider value (each time you drag the slider handle)
     zoomSlider.oninput = function() {
         showValue.innerHTML = this.value;
-        dezoom((100-this.value)*100);
+        dezoom(this.value/100+0.1);
         localStorage.setItem("zoom", this.value)
     }
 }
