@@ -1,15 +1,17 @@
 # Manga Enhance
 This repository contains the code for the Manga Enhance userscript for Tampermonkey.
 
+The goal of this script is to enhance the reading experience of various websites.
+
 
 ## How to run it ?
-- Intall Tampermonkey or an other userscript manager (https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo).
-- Copy the code in the `Manga_Enhance.txt` file and paste it in a new Tampermonkey file.
+- Intall Tampermonkey or an other userscript manager extension on your browser ([Install Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)).
+- Copy the code in the `Manga_Enhance.js` file and paste it in a new Tampermonkey file.
 - Enjoy !
 
 
 ## What sites are supported ?
-Currently, https://manga-tx.com and https://www.webtoons.com are supported. Other changes may include other sites.
+Currently, [Manga-TX](https://manga-tx.com) and [Webtoons](https://www.webtoons.com) are supported. Other changes may include other sites.
 
 
 ## What are the fonctiunalities ?
