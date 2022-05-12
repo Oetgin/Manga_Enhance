@@ -16,11 +16,12 @@ Currently, [Manga-TX](https://manga-tx.com) and [Webtoons](https://www.webtoons.
 
 ## What are the fonctiunalities ?
 ### Manga-TX :
-- Banner when scrolling up removal
+- Removal of the banner when scrolling up
 - Automatically go to the next chapter when at the bottom of the page
 - Automatically load more mangas when browsing through the site and at the bottom of the page
 - Dezoom a bit to be able to read more at once
-- Small menu to change the zoom level
+- Change the brightness to read in the dark
+- Small menu to change the zoom and brightness level
 ### Webtoons :
 - Automatically go to the next chapter when at the bottom of the page
 - Dezoom a bit to be able to read more at once
