@@ -17,15 +17,19 @@ function dezoom(dezoomValue){
         readingContent.style.zoom = dezoomValue;
 }
 
+function brighten(brightnessValue){
+        const readingContent = document.getElementsByClassName("reading-content")[0];
+        readingContent.style.filter = `brightness(${brightnessValue})`
+}
 
 
 function createMenu(){
 
-    // Get previous used zoom
-    var defaultZoom = localStorage.getItem("zoom");
+    var defaultZoom = localStorage.getItem("zoom"); // Get previous used zoom
+    var defaultBrightness = localStorage.getItem("brightness"); // Get previous used brightness
 
-    // Dezoom to previous zoom value
-    dezoom(defaultZoom/100+0.1);
+    dezoom(defaultZoom/100+0.1); // Dezoom to previous zoom value
+    brighten(defaultBrightness/100)
 
     // The div for the menu
     var menuDiv = document.createElement("div");
@@ -34,21 +38,22 @@ function createMenu(){
     menuDiv.style.background = "#353535";
     menuDiv.style.right = "50px";
     menuDiv.style.bottom = 0;
-    menuDiv.style.width = "230px";
+    menuDiv.style.width = "275px";
+    menuDiv.style.padding = "7.5px";
 
     // The "Manga Enhance" label
     var logoLabel = document.createElement("span");
     logoLabel.innerHTML = "---- Manga Enhance ----";
     logoLabel.style.fontFamily = "Monospace";
     logoLabel.style.color = "white";
-    logoLabel.style.marginLeft = "35px";
+    logoLabel.style.paddingLeft = "40px";
+    logoLabel.style.paddingRight = "40px";
 
     // The "Zoom :" label
     var zoomLabel = document.createElement("span");
     zoomLabel.innerHTML = "Zoom : ";
     zoomLabel.style.fontFamily = "Monospace";
     zoomLabel.style.color = "white";
-    zoomLabel.style.paddingLeft = "10px";
 
     // The slider for the zoom value
     var zoomSlider = document.createElement("input");
@@ -57,24 +62,55 @@ function createMenu(){
     zoomSlider.defaultValue = defaultZoom
 
     // The label for the zoom value
-    var showValue = document.createElement("span");
-    showValue.style.fontFamily = "Monospace";
-    showValue.style.paddingLeft = "10px";
-    showValue.style.color = "white";
+    var showZoom = document.createElement("span");
+    showZoom.style.fontFamily = "Monospace";
+    showZoom.style.color = "white";
+    showZoom.style.paddingLeft = "10px";
+    showZoom.style.display = "inline-block"
 
+    // The "Brightness :" label
+    var brightnessLabel = document.createElement("span");
+    brightnessLabel.innerHTML = "Brightness : ";
+    brightnessLabel.style.fontFamily = "Monospace";
+    brightnessLabel.style.color = "white";
+
+    // The slider for the brightness value
+    var brightnessSlider = document.createElement("input");
+    brightnessSlider.type = "range";
+    brightnessSlider.class = "slider";
+    brightnessSlider.defaultValue = defaultBrightness
+
+    // The label for the brightness value
+    var showBrightness = document.createElement("span");
+    showBrightness.style.fontFamily = "Monospace";
+    showBrightness.style.color = "white";
+    showBrightness.style.paddingLeft = "10px";
+
+    // Append the elements to the document
     document.body.appendChild(menuDiv);
     menuDiv.appendChild(logoLabel);
     menuDiv.appendChild(zoomLabel);
     menuDiv.appendChild(zoomSlider);
-    menuDiv.appendChild(showValue);
+    menuDiv.appendChild(showZoom);
+    menuDiv.appendChild(brightnessLabel);
+    menuDiv.appendChild(brightnessSlider);
+    menuDiv.appendChild(showBrightness);
 
-    showValue.innerHTML = zoomSlider.value; // Display the default slider value
+    showZoom.innerHTML = zoomSlider.value; // Display the default zoom slider value
+    showBrightness.innerHTML = brightnessSlider.value // Display the default brightness slider value
 
-    // Update the current slider value (each time you drag the slider handle)
+    // Update the current zoom slider value (each time you drag the slider handle)
     zoomSlider.oninput = function() {
-        showValue.innerHTML = this.value;
+        showZoom.innerHTML = this.value;
         dezoom(this.value/100+0.1);
         localStorage.setItem("zoom", this.value)
+    }
+
+    // Update the current brightness slider value (each time you drag the slider handle)
+    brightnessSlider.oninput = function() {
+        showBrightness.innerHTML = this.value;
+        brighten(this.value/100);
+        localStorage.setItem("brightness", this.value)
     }
 }
 
