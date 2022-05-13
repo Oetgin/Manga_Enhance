@@ -38,7 +38,7 @@ function createMenu(){
     menuDiv.style.background = "#353535";
     menuDiv.style.right = "50px";
     menuDiv.style.bottom = 0;
-    menuDiv.style.width = "275px";
+    menuDiv.style.width = "280px";
     menuDiv.style.padding = "7.5px";
 
     // The "Manga Enhance" label
@@ -46,8 +46,8 @@ function createMenu(){
     logoLabel.innerHTML = "---- Manga Enhance ----";
     logoLabel.style.fontFamily = "Monospace";
     logoLabel.style.color = "white";
-    logoLabel.style.paddingLeft = "40px";
-    logoLabel.style.paddingRight = "40px";
+    logoLabel.style.paddingLeft = "42.5px";
+    logoLabel.style.paddingRight = "42.5px";
 
     // The "Zoom :" label
     var zoomLabel = document.createElement("span");
