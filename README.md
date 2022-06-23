@@ -44,7 +44,7 @@ You can also report issues (please include context and a screenshot if possible)
 
 
 ## Privacy
-Manga Enhance does not collect any personal information. All the necessary information for the script to function correctly are stored on your device and cannot be accessed whatsoever without your consent. Note that the script also only activates on the supported websites.
+Manga Enhance does not collect any personal information. All the necessary information for the script to function correctly are stored on your device and cannot be accessed whatsoever without your consent. Note that the script also only activates on the supported websites and is completely open-source.
 
 
 ## Contact
