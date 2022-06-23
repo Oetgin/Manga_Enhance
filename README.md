@@ -1,5 +1,5 @@
 # Manga Enhance
-This repository contains the code for the Manga Enhance userscript for Tampermonkey.
+This repository contains the code for the Manga Enhance userscript for Tampermonkey.\
 The goal of this script is to enhance the reading experience of various websites.
 
 
