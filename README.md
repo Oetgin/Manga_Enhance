@@ -11,7 +11,7 @@ The goal of this script is to enhance the reading experience of various websites
 
 
 ## What sites are supported ?
-Currently, [Manga-TX](https://manga-tx.com) and [Webtoons](https://www.webtoons.com) are supported. Other changes may include other sites.
+Currently, [Manga-TX](https://manga-tx.com), [Manga scantrad](https://manga-scantrad.net) and [Webtoons](https://www.webtoons.com) are supported. Other changes may include other sites.
 
 
 ## What are the fonctiunalities ?
@@ -22,9 +22,16 @@ Currently, [Manga-TX](https://manga-tx.com) and [Webtoons](https://www.webtoons.
 - Dezoom a bit to be able to read more at once
 - Change the brightness to read in the dark
 - Small menu to change the zoom and brightness level
+### Manga-Scantrad :
+- Automatically go to the next chapter when at the bottom of the page
+- Automatically load more mangas when browsing through the site and at the bottom of the page
+- Dezoom a bit to be able to read more at once
+- Change the brightness to read in the dark
+- Small menu to change the zoom and brightness level
 ### Webtoons :
 - Automatically go to the next chapter when at the bottom of the page
 - Dezoom a bit to be able to read more at once
+
 
 ## How can I improve it ?
 You can improve this project by either writing new code or offering improvement ideas.
@@ -33,3 +40,9 @@ You can also report issues (please include context and a screenshot if possible)
 
 ## Contact
 You can contact me directly through GitHub or Discord (Oetgin#5327)
+
+
+## Coming next
+- Auto-scroll
+- Webtoons menu and brightness integration
+- Automatic interconnected bookmarks to know where you left
