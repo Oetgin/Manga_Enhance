@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Manga enhance
 // @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Improves manga sites' reading experience
+// @version      1.5
+// @description  Improves the reading experience of multiple websites
 // @author       Oetgin
 // @match        https://manga-tx.com/*
 // @match        https://www.webtoons.com/*
+// @match        https://manga-scantrad.net/*
 // @icon         https://github.com/Oetgin/Manga_Enhance/blob/main/Manga_enhance.png?raw=true.png
 // @grant        none
 // ==/UserScript==
@@ -20,6 +21,10 @@ function dezoom(dezoomValue){
 function brighten(brightnessValue){
         const readingContent = document.getElementsByClassName("reading-content")[0];
         readingContent.style.filter = `brightness(${brightnessValue})`
+}
+
+function scroll(scrollValue){
+        window.scrollBy(0,scrollValue)
 }
 
 
@@ -86,6 +91,7 @@ function createMenu(){
     showBrightness.style.color = "white";
     showBrightness.style.paddingLeft = "10px";
 
+
     // Append the elements to the document
     document.body.appendChild(menuDiv);
     menuDiv.appendChild(logoLabel);
@@ -123,7 +129,7 @@ function createMenu(){
     console.log("https://github.com/Oetgin/Manga_Enhance")
 
 
-    // Manga-TX code
+    // Manga-TX and Manga-scantrad code
     // When reading mangas
     try {
         // Remove banner
@@ -164,7 +170,7 @@ window.onscroll = function(ev) {
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
         // You're at the bottom of the page
 
-        // Manga-TX
+        // Manga-TX and Manga-scantrad
         try {
             // Click next page button
             document.getElementsByClassName("btn next_page")[0].click();
