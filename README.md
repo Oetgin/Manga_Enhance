@@ -5,7 +5,7 @@ The goal of this script is to enhance the reading experience of various websites
 
 ## How to run it ?
 - [Install Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or an other userscript manager extension on your browser.
-- Copy the code in the [Manga_Enhance.js](https://gtithub.com/Oetgin/Ma,ga_Enhance/main/Manga_Enhance.js) file and paste it in a new Tampermonkey file.
+- Copy the code in the [Manga_Enhance.js](https://github.com/Oetgin/Manga_Enhance/blob/main/Manga_Enhance.js) file and paste it in a new Tampermonkey file.
 - Enjoy !
 
 
