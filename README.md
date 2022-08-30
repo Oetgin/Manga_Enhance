@@ -27,6 +27,7 @@ Currently, [Manga-TX](https://manga-tx.com), [Manga scantrad](https://manga-scan
 - Dezoom a bit to be able to read more at once
 - Change the brightness to read in the dark
 - Small menu to change the zoom and brightness level
+- Custom transparent background with your image of choice
 ### Webtoons :
 - Automatically go to the next chapter when at the bottom of the page
 - Dezoom a bit to be able to read more at once
