@@ -36,6 +36,7 @@ Currently, [Manga-TX](https://manga-tx.com), [Manga scantrad](https://manga-scan
 ## How can I improve it ?
 You can improve this project by either writing new code or offering improvement ideas.
 You can also report issues (please include context and a screenshot if possible).
+Note that I must likely won't fix any minor issue considering how little time I assign to this porject.
 
 
 ## Coming next
