@@ -21,6 +21,8 @@ Currently, [Manga-TX](https://manga-tx.com), [Manga scantrad](https://manga-scan
 - Dezoom a bit to be able to read more at once
 - Change the brightness to read in the dark
 - Small menu to change the zoom and brightness level
+- Custom transparent background with your image of choice
+- New mouse cursor
 ### Manga-Scantrad :
 - Automatically go to the next chapter when at the bottom of the page
 - Automatically load more mangas when browsing through the site and at the bottom of the page
@@ -28,9 +30,12 @@ Currently, [Manga-TX](https://manga-tx.com), [Manga scantrad](https://manga-scan
 - Change the brightness to read in the dark
 - Small menu to change the zoom and brightness level
 - Custom transparent background with your image of choice
+- New mouse cursor
 ### Webtoons :
 - Automatically go to the next chapter when at the bottom of the page
 - Dezoom a bit to be able to read more at once
+- Automatically refuse cookies
+- New mouse cursor
 
 
 ## How can I improve it ?
