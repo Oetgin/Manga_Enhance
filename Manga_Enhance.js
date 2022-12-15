@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Manga enhance
 // @namespace    http://tampermonkey.net/
-// @version      1.7.4
+// @version      1.7.5
 // @description  Improves the reading experience of multiple websites
 // @author       Oetgin
 // @match        https://manga-tx.com/*
@@ -89,24 +89,40 @@
 
     function changeCursor(){
         // Cursor
-        let Cursor = document.createElement("div");
+        let Cursor = document.createElement("span");
         Cursor.id = "cursor";
-        Cursor.syle.width = "7px";
-        Cursor.syle.height = "7px";
-        Cursor.syle.backgroundColor = "white";
-        Cursor.syle.borderRadius = "50%";
-        Cursor.syle.marginBottom = "20rem";
+        Cursor.style.width = "10px";
+        Cursor.style.height = "10px";
+        Cursor.style.position = "fixed";
+        Cursor.style.display = "inline-block";
+        Cursor.style.backgroundColor = "white";
+        Cursor.style.border = "2px solid black"
+        Cursor.style.borderRadius = "50%";
+        Cursor.style.transition = "transform .2s ease";
+        Cursor.style.pointerEvents = "none";
+        Cursor.style.zIndex = 100;
 
         // Append the elements to the document
         document.body.appendChild(Cursor);
 
-        const moveCursor = (e)=>{
-            const mouseY = e.clientY;
-            const mouseX = e.clientX;
-            Cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        document.querySelectorAll('*').forEach((node) => node.style.cursor = "none");
+
+        function mouseMoveHandler(e){
+            Cursor.style.left = e.clientX - Cursor.offsetWidth / 2 + "px";
+            Cursor.style.top = e.clientY - Cursor.offsetHeight / 2 + "px";
         }
 
-        window.addEventListener('mousemove', moveCursor);
+        function mouseDownHandler() {
+            Cursor.style.transform = "scale(1.25)";
+        }
+
+        function mouseUpHandler(){
+            Cursor .style.transform = "scale(1)"
+        }
+
+        window.addEventListener('mousemove', mouseMoveHandler);
+        window.addEventListener('mousedown', mouseDownHandler);
+        window.addEventListener('mouseup', mouseUpHandler);
 
     }
 
@@ -307,14 +323,12 @@
             logger.ok("Created menu");
         } catch {logger.error("Failed to create menu")}
 
-        /*
         logger.action("Changing cursor");
         try {
             // Change cursor
             changeCursor();
             logger.ok("Changed cursor");
         } catch(e) {console.error(e);logger.error("Failed to change cursor")}
-*/
 
         logger.action("Changing background");
         try {
@@ -378,12 +392,47 @@
     if (url.includes("webtoons")){
         logger.info("Currently on Webtoons")
         // Dezoom
-        logger.action("Dezooming")
+        logger.action("Dezooming");
         try{
             document.getElementById("_imageList").style.zoom = 0.7;
             document.getElementById("_imageList").style.width = "1602px";
             logger.ok("Dezoomed");
         } catch {logger.error("Failed to dezoom")}
+
+        logger.action("Refusing cookies");
+        // Observe when the cookies popup appears
+        function waitForCookies(selector) {
+            return new Promise(resolve => {
+                if (document.querySelector(selector)) {
+                    return resolve(document.querySelector(selector));
+                }
+
+                const observer = new MutationObserver(mutations => {
+                    if (document.querySelector(selector)) {
+                        resolve(document.querySelector(selector));
+                        observer.disconnect();
+                    }
+                });
+
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            });
+        }
+        try {
+            waitForCookies("._close").then(CookiesPopup => {
+                CookiesPopup.click();
+                logger.ok("Refused cookies")}
+            );
+        } catch {logger.error("Failed to refuse cookies")}
+
+        logger.action("Changing cursor");
+        try {
+            // Change cursor
+            changeCursor();
+            logger.ok("Changed cursor");
+        } catch(e) {console.error(e);logger.error("Failed to change cursor")}
     }
 
 
